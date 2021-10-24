@@ -17,6 +17,4 @@ public class DefaultBlockCalculator implements BlockCalculator {
     return OptionalInt.empty();
   }
 
-
-
 }
