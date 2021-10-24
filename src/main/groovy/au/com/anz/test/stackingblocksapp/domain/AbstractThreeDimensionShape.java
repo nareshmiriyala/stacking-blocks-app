@@ -16,7 +16,7 @@ public abstract class AbstractThreeDimensionShape implements ThreeDimensionShape
 
   @Override
   public List<Integer> getDimensions() {
-    return Arrays.asList(length, width, height);
+    return Arrays.asList(width, length, height);
   }
 
   @Override

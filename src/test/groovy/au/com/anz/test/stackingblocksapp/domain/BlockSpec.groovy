@@ -10,6 +10,6 @@ class BlockSpec extends Specification {
     block.length == 10
     block.width == 20
     block.height == 30
-    block.dimensions == [10, 20, 30]
+    block.dimensions == [20, 10, 30]
   }
 }
