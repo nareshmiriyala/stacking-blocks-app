@@ -1,7 +1,7 @@
 plugins {
-	id 'org.springframework.boot' version '2.5.6'
-	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
-	id 'groovy'
+  id 'org.springframework.boot' version '2.5.6'
+  id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+  id 'groovy'
 }
 
 group = 'au.com.anz.test'
@@ -9,15 +9,17 @@ version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 
 repositories {
-	mavenCentral()
+  mavenCentral()
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter'
-	implementation 'org.codehaus.groovy:groovy'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+  implementation 'org.springframework.boot:spring-boot-starter'
+  implementation 'org.codehaus.groovy:groovy'
+  testImplementation('org.spockframework:spock-core:2.0-groovy-3.0')
+  testImplementation('org.spockframework:spock-spring:2.0-groovy-3.0')
+  testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
 test {
-	useJUnitPlatform()
+  useJUnitPlatform()
 }
