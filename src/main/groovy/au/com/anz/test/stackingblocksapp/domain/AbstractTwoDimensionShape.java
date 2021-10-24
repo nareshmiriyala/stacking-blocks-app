@@ -3,20 +3,19 @@ package au.com.anz.test.stackingblocksapp.domain;
 import java.util.Arrays;
 import java.util.List;
 
-public abstract class AbstractThreeDimensionShape implements ThreeDimensionShape {
+public abstract class AbstractTwoDimensionShape implements TwoDimensionShape {
   protected final Integer width;
   protected final Integer length;
-  protected final Integer height;
 
-  public AbstractThreeDimensionShape(Integer width, Integer length, Integer height) {
+  public AbstractTwoDimensionShape(Integer width, Integer length) {
     this.width = width;
     this.length = length;
-    this.height = height;
+
   }
 
   @Override
   public List<Integer> getDimensions() {
-    return Arrays.asList(width, length, height);
+    return Arrays.asList(width, length);
   }
 
   @Override
@@ -29,16 +28,11 @@ public abstract class AbstractThreeDimensionShape implements ThreeDimensionShape
     return width;
   }
 
-  @Override
-  public Integer getHeight() {
-    return height;
-  }
 
   @Override
   public String toString() {
     return "width=" + width +
-      ", length=" + length +
-      ", height=" + height
+      ", length=" + length
       ;
   }
 }
