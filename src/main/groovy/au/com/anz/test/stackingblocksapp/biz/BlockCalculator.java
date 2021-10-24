@@ -17,7 +17,7 @@ public class BlockCalculator implements ShapeCalculator {
   }
 
   private void verifyIfAllBlocks(List<Shape> blocks) {
-    Predicate<Shape> isNotAInstanceOfBlock = (block) -> (block instanceof Block);
+    Predicate<Shape> isNotAInstanceOfBlock = (block) -> !(block instanceof Block);
     if (blocks.stream().anyMatch(isNotAInstanceOfBlock)) {
       throw new InvalidBlockException("Input shape is not a block");
     }
