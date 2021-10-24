@@ -14,6 +14,13 @@ class BlockSpec extends Specification {
     block.dimensions == [10, 20, 30]
   }
 
+  def "assert error when width,length,height not between 1 and 100"() {
+    when:
+    Block block = Block.of(150, 20, 30)
+    then:
+    thrown(AssertionError)
+  }
+
   @Unroll
   def "test block #b1 can be placed on block #b2"() {
     given:

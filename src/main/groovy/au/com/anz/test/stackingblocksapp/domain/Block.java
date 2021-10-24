@@ -10,7 +10,8 @@ public class Block extends AbstractThreeDimensionShape implements Comparable<Blo
   }
 
   public static Block of(Integer width, Integer length, Integer height) {
-
+    assert (width >= 0 && width <= 100) && length >= 0 && length <= 100
+      && height >= 0 && height <= 100 : "Constraint: 1 <= width, length, height <= 100";
     return new Block(length, width, height);
   }
 
