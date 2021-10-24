@@ -12,5 +12,9 @@ public class Block extends AbstractThreeDimensionShape {
     return new Block(length, width, height);
   }
 
+  boolean canBePlacedOnTopOfBlock(Block comparedBlock) {
+    return width >= comparedBlock.width && length >= comparedBlock.length && height >= comparedBlock.height;
+  }
+
 
 }

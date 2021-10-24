@@ -4,9 +4,9 @@ import java.util.Arrays;
 import java.util.List;
 
 public abstract class AbstractThreeDimensionShape implements ThreeDimensionShape {
-  private final Integer length;
-  private final Integer width;
-  private final Integer height;
+  protected final Integer length;
+  protected final Integer width;
+  protected final Integer height;
 
   public AbstractThreeDimensionShape(Integer length, Integer width, Integer height) {
     this.length = length;
@@ -32,5 +32,13 @@ public abstract class AbstractThreeDimensionShape implements ThreeDimensionShape
   @Override
   public Integer getHeight() {
     return height;
+  }
+
+  @Override
+  public String toString() {
+    return "length=" + length +
+      ", width=" + width +
+      ", height=" + height
+      ;
   }
 }
