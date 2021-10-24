@@ -1,6 +1,8 @@
 package au.com.anz.test.stackingblocksapp.domain;
 
-public class Block extends AbstractThreeDimensionShape {
+import java.util.Comparator;
+
+public class Block extends AbstractThreeDimensionShape implements Comparable<Block> {
 
   private Block(Integer width, Integer length, Integer height) {
 
@@ -16,5 +18,11 @@ public class Block extends AbstractThreeDimensionShape {
     return width >= comparedBlock.width && length >= comparedBlock.length && height >= comparedBlock.height;
   }
 
-
+  @Override
+  public int compareTo(Block comparingBlock) {
+    return Comparator.comparing(Block::getHeight)
+      .thenComparing(Block::getLength)
+      .thenComparing(Block::getWidth)
+      .compare(this, comparingBlock);
+  }
 }
