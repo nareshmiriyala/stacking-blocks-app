@@ -14,7 +14,7 @@ public class Block extends AbstractThreeDimensionShape implements Comparable<Blo
     return new Block(length, width, height);
   }
 
-  boolean canBePlacedOnTopOfBlock(Block comparedBlock) {
+  public boolean canBePlacedOnTopOfBlock(Block comparedBlock) {
     return width >= comparedBlock.width && length >= comparedBlock.length && height >= comparedBlock.height;
   }
 

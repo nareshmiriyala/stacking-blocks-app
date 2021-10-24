@@ -12,7 +12,7 @@ import static au.com.anz.test.stackingblocksapp.TestData.DATA_SET_2
 import static java.util.Arrays.asList
 
 @SpringBootTest
-class DefaultBlockCalculatorHelperTest extends Specification {
+class DefaultBlockCalculatorHelperSpec extends Specification {
   @Autowired
   BlockCalculatorHelper defaultBlockCalculatorHelper
 
@@ -26,7 +26,7 @@ class DefaultBlockCalculatorHelperTest extends Specification {
     outputBlocks == expected
     where:
     input      | expected
-    DATA_SET_1 | asList(Block.of(23, 45, 120), Block.of(5, 37, 95), Block.of(20, 45, 50))
+    DATA_SET_1 | asList(Block.of(37, 53, 95), Block.of(20, 45, 50), Block.of(12, 23, 45))
     DATA_SET_2 | asList(Block.of(3, 35, 76), Block.of(25, 38, 45))
   }
 }
