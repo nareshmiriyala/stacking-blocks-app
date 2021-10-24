@@ -1,5 +1,6 @@
 package au.com.anz.test.stackingblocksapp.domain
 
+import au.com.anz.test.stackingblocksapp.exception.ValidationException
 import spock.lang.Specification
 import spock.lang.Unroll
 
@@ -14,11 +15,11 @@ class BlockSpec extends Specification {
     block.dimensions == [10, 20, 30]
   }
 
-  def "assert error when width,length,height not between 1 and 100"() {
+  def "Throw ValidationException when width,length,height not between 1 and 100"() {
     when:
     Block block = Block.of(150, 20, 30)
     then:
-    thrown(AssertionError)
+    thrown(ValidationException)
   }
 
   @Unroll
