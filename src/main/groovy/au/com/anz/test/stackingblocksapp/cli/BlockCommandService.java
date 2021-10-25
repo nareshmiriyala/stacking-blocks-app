@@ -11,11 +11,10 @@ import org.springframework.stereotype.Service;
 
 import static au.com.anz.test.stackingblocksapp.validation.BlockValidator.validateInputBlockCount;
 
-
 @Service
 public class BlockCommandService implements CommandService {
 
-  private Logger log = LoggerFactory.getLogger(BlockCommandService.class);
+  private static final Logger log = LoggerFactory.getLogger(BlockCommandService.class);
   @Autowired
   BlockCalculator defaultBlockCalculator;
 
