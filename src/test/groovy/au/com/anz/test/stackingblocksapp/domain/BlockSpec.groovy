@@ -17,7 +17,7 @@ class BlockSpec extends Specification {
 
   def "Throw ValidationException when width,length,height not between 1 and 100"() {
     when:
-    Block block = Block.of(150, 20, 30)
+    Block.of(150, 20, 30)
     then:
     thrown(ValidationException)
   }

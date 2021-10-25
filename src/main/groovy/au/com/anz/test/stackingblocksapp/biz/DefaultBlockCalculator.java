@@ -22,7 +22,7 @@ public class DefaultBlockCalculator implements BlockCalculator {
     return getStackedBlocksChoices.andThen(maxHeightOfStackedBlocks).apply(blocksDescendingByDimension);
   }
 
-  static Function<List<Block>, List<List<Block>>> getStackedBlocksChoices = (blocks) -> IntStream.range(0, blocks.size()).mapToObj(index -> {
+  static final Function<List<Block>, List<List<Block>>> getStackedBlocksChoices = (blocks) -> IntStream.range(0, blocks.size()).mapToObj(index -> {
     Block indexBlock = blocks.get(index);
     List<Block> stackedBlocks = new ArrayList<>();
     stackedBlocks.add(indexBlock);
@@ -36,7 +36,7 @@ public class DefaultBlockCalculator implements BlockCalculator {
       .collect(Collectors.toList());
   }
 
-  static Function<List<List<Block>>, OptionalInt> maxHeightOfStackedBlocks = (stackedBlocksChoices) -> {
+  static final Function<List<List<Block>>, OptionalInt> maxHeightOfStackedBlocks = (stackedBlocksChoices) -> {
     Function<List<Block>, Integer> sum = (List<Block> bl) -> (bl.stream().map(Block::getHeight).mapToInt(Integer::intValue).sum());
     return stackedBlocksChoices.stream().map(sum).mapToInt(Integer::intValue).max();
   };

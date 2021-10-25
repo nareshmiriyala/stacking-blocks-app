@@ -20,9 +20,9 @@ public class DefaultInputHandler implements InputHandler {
     }
   }
 
-  static BiPredicate<String, InputDataPattern> isStackingBlocksMaxHeightCommandInput = (inputData, inputPattern) -> {
+  static final BiPredicate<String, InputDataPattern> isStackingBlocksMaxHeightCommandInput = (inputData, inputPattern) -> {
     Pattern pattern = Pattern.compile(inputPattern.getRegex());
     return pattern.matcher(inputData).find();
   };
-  static Function<String, String> removeWhiteSpaces = (inputData) -> inputData.replaceAll(" ", "");
+  static final Function<String, String> removeWhiteSpaces = (inputData) -> inputData.replaceAll(" ", "");
 }

@@ -8,9 +8,9 @@ import java.util.regex.Pattern;
 
 import au.com.anz.test.stackingblocksapp.domain.Block;
 
-public class BlockCommand {
+public class BlockCommandHelper {
   public static final String BLOCK_DIMENSION_REGEX = "\\d{1,3},\\d{1,3},\\d{1,3}";
-  public static Function<String, List<Block>> createBlocksFromCliInput = (inputData) -> {
+  public static final Function<String, List<Block>> createBlocksFromCliInput = (inputData) -> {
     Matcher matcher = Pattern.compile(BLOCK_DIMENSION_REGEX).matcher(inputData);
     List<Block> blocks = new ArrayList<>();
     while (matcher.find()) {

@@ -16,7 +16,7 @@ import static java.lang.String.format
 @Slf4j
 class StackingBlocksAppApplication implements CommandLineRunner {
 
-  private static volatile boolean EXIT;
+  private static volatile boolean EXIT
   @Autowired
   InputHandler inputHandler
 
@@ -43,10 +43,10 @@ class StackingBlocksAppApplication implements CommandLineRunner {
       }
     }
     catch (Exception e) {
-      log.error(format("An error occurred: %s", e));
+      log.error(format("An error occurred: %s", e))
     }
 
-    getRuntime().addShutdownHook(new Thread(() -> EXIT = true));
+    getRuntime().addShutdownHook(new Thread(() -> EXIT = true))
 
   }
 }

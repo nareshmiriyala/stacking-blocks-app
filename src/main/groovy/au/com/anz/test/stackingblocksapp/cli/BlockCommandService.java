@@ -21,7 +21,7 @@ public class BlockCommandService implements CommandService {
   @Override
   public void execute(String inputData) {
 
-    OptionalInt maxStackedHeight = BlockCommand.createBlocksFromCliInput
+    OptionalInt maxStackedHeight = BlockCommandHelper.createBlocksFromCliInput
       .andThen(validateInputBlockCount).andThen(defaultBlockCalculator::getMaxStackedHeight).apply(inputData);
     if (maxStackedHeight.isPresent()) {
       log.info("Total height is: " + maxStackedHeight.getAsInt());
