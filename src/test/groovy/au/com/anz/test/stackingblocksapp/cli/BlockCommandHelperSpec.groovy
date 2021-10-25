@@ -4,11 +4,11 @@ import au.com.anz.test.stackingblocksapp.TestData
 import au.com.anz.test.stackingblocksapp.domain.Block
 import spock.lang.Specification
 
-class BlockCommandSpec extends Specification {
+class BlockCommandHelperSpec extends Specification {
 
   def "test create blocks from input data"() {
     when:
-    List<Block> blocks = BlockCommand.createBlocksFromCliInput.apply(input)
+    List<Block> blocks = BlockCommandHelper.createBlocksFromCliInput.apply(input)
     then:
     blocks == expected
     where:

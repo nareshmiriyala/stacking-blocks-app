@@ -1,7 +1,6 @@
 package au.com.anz.test.stackingblocksapp.validation
 
-
-import au.com.anz.test.stackingblocksapp.cli.BlockCommand
+import au.com.anz.test.stackingblocksapp.cli.BlockCommandHelper
 import au.com.anz.test.stackingblocksapp.domain.Block
 import au.com.anz.test.stackingblocksapp.exception.ValidationException
 import spock.lang.Specification
@@ -15,7 +14,7 @@ class BlockValidatorSpec extends Specification {
     given:
     String input = INVALID_NUMBER_OF_BLOCKS
     when:
-    BlockCommand.createBlocksFromCliInput.andThen(BlockValidator.validateInputBlockCount).apply(input)
+    BlockCommandHelper.createBlocksFromCliInput.andThen(BlockValidator.validateInputBlockCount).apply(input)
     then:
     thrown(ValidationException.class)
   }
@@ -24,7 +23,7 @@ class BlockValidatorSpec extends Specification {
     given:
     String input = INPUT_DATA_3
     when:
-    List<Block> blocks = BlockCommand.createBlocksFromCliInput.andThen(BlockValidator.validateInputBlockCount).apply(input)
+    List<Block> blocks = BlockCommandHelper.createBlocksFromCliInput.andThen(BlockValidator.validateInputBlockCount).apply(input)
     then:
     blocks.size() == 6
     blocks == DATA_SET_3
