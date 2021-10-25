@@ -31,7 +31,7 @@ class StackingBlocksAppApplication implements CommandLineRunner {
     try {
       try (Scanner scanner = new Scanner(System.in)) {
         while (!EXIT) {
-          log.info("Please input blocks = ")
+          log.info("Please input blocks: ")
           String line = scanner.nextLine()
           try {
             inputHandler.dispatch(line)
